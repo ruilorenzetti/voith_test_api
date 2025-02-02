@@ -1,0 +1,13 @@
+/home/neo/IdeaProjects/voith_test_api/microservice-ingestion/src/main/java/com/voith/ingestion/producer/MachineProducer.java
+/home/neo/IdeaProjects/voith_test_api/microservice-ingestion/src/main/java/com/voith/ingestion/model/ErrorData.java
+/home/neo/IdeaProjects/voith_test_api/microservice-ingestion/src/main/java/com/voith/ingestion/producer/ErrorProducer.java
+/home/neo/IdeaProjects/voith_test_api/microservice-ingestion/src/main/java/com/voith/ingestion/model/MachineData.java
+/home/neo/IdeaProjects/voith_test_api/microservice-ingestion/src/main/java/com/voith/ingestion/MicroserviceIngestionApplication.java
+/home/neo/IdeaProjects/voith_test_api/microservice-ingestion/src/main/java/com/voith/ingestion/model/MaintenanceData.java
+/home/neo/IdeaProjects/voith_test_api/microservice-ingestion/src/main/java/com/voith/ingestion/service/ProducerService.java
+/home/neo/IdeaProjects/voith_test_api/microservice-ingestion/src/main/java/com/voith/ingestion/model/TelemetryData.java
+/home/neo/IdeaProjects/voith_test_api/microservice-ingestion/src/main/java/com/voith/ingestion/model/FailureData.java
+/home/neo/IdeaProjects/voith_test_api/microservice-ingestion/src/main/java/com/voith/ingestion/producer/FailureProducer.java
+/home/neo/IdeaProjects/voith_test_api/microservice-ingestion/src/main/java/com/voith/ingestion/config/KafkaProducerConfig.java
+/home/neo/IdeaProjects/voith_test_api/microservice-ingestion/src/main/java/com/voith/ingestion/producer/MaintenanceProducer.java
+/home/neo/IdeaProjects/voith_test_api/microservice-ingestion/src/main/java/com/voith/ingestion/producer/TelemetryProducer.java

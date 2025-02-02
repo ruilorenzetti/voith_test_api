@@ -1,0 +1,193 @@
+openapi: 3.0.0
+info:
+  description: API for querying InfluxDB data for a real-time monitoring dashboard
+  title: Voith API
+  version: 1.0.0
+servers:
+- description: Local Server
+  url: http://localhost:8080
+paths:
+  /api/telemetry:
+    get:
+      description: "Fetches voltage, rotation, pressure, and vibration data from machines."
+      parameters:
+      - description: Start date/time for the time range
+        explode: true
+        in: query
+        name: start
+        required: false
+        schema:
+          format: date-time
+          type: string
+        style: form
+      - description: End date/time for the time range
+        explode: true
+        in: query
+        name: end
+        required: false
+        schema:
+          format: date-time
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/TelemetryData'
+                type: array
+          description: Success
+      summary: Retrieve telemetry data
+      x-accepts:
+      - application/json
+  /api/failures:
+    get:
+      description: Fetches recorded machine failures.
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/FailureData'
+                type: array
+          description: Success
+      summary: Retrieve failure data
+      x-accepts:
+      - application/json
+  /api/errors:
+    get:
+      description: Fetches recorded system errors.
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/ErrorData'
+                type: array
+          description: Success
+      summary: Retrieve error data
+      x-accepts:
+      - application/json
+  /api/maintenance:
+    get:
+      description: Fetches scheduled or completed maintenance records.
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/MaintenanceData'
+                type: array
+          description: Success
+      summary: Retrieve maintenance records
+      x-accepts:
+      - application/json
+  /api/machines:
+    get:
+      description: Fetches all monitored machines and their statuses.
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/MachineData'
+                type: array
+          description: Success
+      summary: Retrieve machine list
+      x-accepts:
+      - application/json
+components:
+  schemas:
+    TelemetryData:
+      example:
+        machineId: 0
+        rotation: 1.4658129805029452
+        pressure: 5.962133916683182
+        vibration: 5.637376656633329
+        timestamp: 2000-01-23T04:56:07.000+00:00
+        voltage: 6.027456183070403
+      properties:
+        timestamp:
+          format: date-time
+          type: string
+        machineId:
+          type: integer
+        voltage:
+          type: number
+        rotation:
+          type: number
+        pressure:
+          type: number
+        vibration:
+          type: number
+      type: object
+    FailureData:
+      example:
+        machineId: 0
+        failureType: failureType
+        timestamp: 2000-01-23T04:56:07.000+00:00
+      properties:
+        timestamp:
+          format: date-time
+          type: string
+        machineId:
+          type: integer
+        failureType:
+          type: string
+      type: object
+    ErrorData:
+      example:
+        machineId: 0
+        errorType: errorType
+        timestamp: 2000-01-23T04:56:07.000+00:00
+      properties:
+        timestamp:
+          format: date-time
+          type: string
+        machineId:
+          type: integer
+        errorType:
+          type: string
+      type: object
+    MaintenanceData:
+      example:
+        component: component
+        machineId: 0
+        maintenanceType: maintenanceType
+        timestamp: 2000-01-23T04:56:07.000+00:00
+      properties:
+        timestamp:
+          format: date-time
+          type: string
+        machineId:
+          type: integer
+        component:
+          type: string
+        maintenanceType:
+          type: string
+      type: object
+    MachineData:
+      example:
+        machineId: 0
+        model: model
+        age: 6
+        status: active
+      properties:
+        machineId:
+          type: integer
+        model:
+          type: string
+        age:
+          type: integer
+        status:
+          enum:
+          - active
+          - inactive
+          - maintenance
+          type: string
+      type: object

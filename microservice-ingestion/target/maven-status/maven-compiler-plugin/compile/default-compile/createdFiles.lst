@@ -1,0 +1,14 @@
+com/voith/ingestion/model/TelemetryData.class
+com/voith/ingestion/service/ProducerService.class
+com/voith/ingestion/model/MaintenanceData.class
+com/voith/ingestion/config/KafkaProducerConfig.class
+com/voith/ingestion/producer/FailureProducer.class
+com/voith/ingestion/model/MachineData.class
+com/voith/ingestion/MicroserviceIngestionApplication.class
+com/voith/ingestion/model/FailureData.class
+com/voith/ingestion/producer/MachineProducer.class
+com/voith/ingestion/producer/TelemetryProducer.class
+com/voith/ingestion/producer/ErrorProducer.class
+com/voith/ingestion/model/MachineData$StatusEnum.class
+com/voith/ingestion/producer/MaintenanceProducer.class
+com/voith/ingestion/model/ErrorData.class

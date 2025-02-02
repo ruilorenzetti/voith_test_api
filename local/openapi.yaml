@@ -1,0 +1,161 @@
+openapi: 3.0.0
+info:
+  title: Voith API
+  description: API for querying InfluxDB data for a real-time monitoring dashboard
+  version: 1.0.0
+servers:
+  - url: http://localhost:8080
+    description: Local Server
+
+paths:
+  /api/telemetry:
+    get:
+      summary: Retrieve telemetry data
+      description: Fetches voltage, rotation, pressure, and vibration data from machines.
+      parameters:
+        - name: start
+          in: query
+          description: Start date/time for the time range
+          required: false
+          schema:
+            type: string
+            format: date-time
+        - name: end
+          in: query
+          description: End date/time for the time range
+          required: false
+          schema:
+            type: string
+            format: date-time
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/TelemetryData"
+
+  /api/failures:
+    get:
+      summary: Retrieve failure data
+      description: Fetches recorded machine failures.
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/FailureData"
+
+  /api/errors:
+    get:
+      summary: Retrieve error data
+      description: Fetches recorded system errors.
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/ErrorData"
+
+  /api/maintenance:
+    get:
+      summary: Retrieve maintenance records
+      description: Fetches scheduled or completed maintenance records.
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/MaintenanceData"
+
+  /api/machines:
+    get:
+      summary: Retrieve machine list
+      description: Fetches all monitored machines and their statuses.
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/MachineData"
+
+components:
+  schemas:
+    TelemetryData:
+      type: object
+      properties:
+        timestamp:
+          type: string
+          format: date-time
+        machineId:
+          type: integer
+        voltage:
+          type: number
+        rotation:
+          type: number
+        pressure:
+          type: number
+        vibration:
+          type: number
+
+    FailureData:
+      type: object
+      properties:
+        timestamp:
+          type: string
+          format: date-time
+        machineId:
+          type: integer
+        failureType:
+          type: string
+
+    ErrorData:
+      type: object
+      properties:
+        timestamp:
+          type: string
+          format: date-time
+        machineId:
+          type: integer
+        errorType:
+          type: string
+
+    MaintenanceData:
+      type: object
+      properties:
+        timestamp:
+          type: string
+          format: date-time
+        machineId:
+          type: integer
+        component:
+          type: string
+        maintenanceType:
+          type: string
+
+    MachineData:
+      type: object
+      properties:
+        machineId:
+          type: integer
+        model:
+          type: string
+        age:
+          type: integer
+        status:
+          type: string
+          enum: ["active", "inactive", "maintenance"]

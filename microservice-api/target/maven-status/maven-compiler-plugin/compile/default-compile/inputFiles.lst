@@ -1,0 +1,14 @@
+/home/neo/IdeaProjects/voith_test_api/microservice-api/src/main/java/org/openapitools/OpenApiGeneratorApplication.java
+/home/neo/IdeaProjects/voith_test_api/microservice-api/src/main/java/org/openapitools/RFC3339DateFormat.java
+/home/neo/IdeaProjects/voith_test_api/microservice-api/src/main/java/org/openapitools/api/ApiApi.java
+/home/neo/IdeaProjects/voith_test_api/microservice-api/src/main/java/org/openapitools/api/ApiApiController.java
+/home/neo/IdeaProjects/voith_test_api/microservice-api/src/main/java/org/openapitools/api/ApiUtil.java
+/home/neo/IdeaProjects/voith_test_api/microservice-api/src/main/java/org/openapitools/configuration/HomeController.java
+/home/neo/IdeaProjects/voith_test_api/microservice-api/src/main/java/org/openapitools/configuration/InfluxDBConfig.java
+/home/neo/IdeaProjects/voith_test_api/microservice-api/src/main/java/org/openapitools/configuration/SpringDocConfiguration.java
+/home/neo/IdeaProjects/voith_test_api/microservice-api/src/main/java/org/openapitools/model/ErrorData.java
+/home/neo/IdeaProjects/voith_test_api/microservice-api/src/main/java/org/openapitools/model/FailureData.java
+/home/neo/IdeaProjects/voith_test_api/microservice-api/src/main/java/org/openapitools/model/MachineData.java
+/home/neo/IdeaProjects/voith_test_api/microservice-api/src/main/java/org/openapitools/model/MaintenanceData.java
+/home/neo/IdeaProjects/voith_test_api/microservice-api/src/main/java/org/openapitools/model/TelemetryData.java
+/home/neo/IdeaProjects/voith_test_api/microservice-api/src/main/java/org/openapitools/service/InfluxDBService.java
