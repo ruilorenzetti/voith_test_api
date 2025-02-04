@@ -1,7 +1,6 @@
 # Voith Test API
 Author: Rui Carlos Lorenzetti da Silva
-LinkedIn: www.linkedin.com/in/ruilorenzetti
-Phone (WhatsApp): +55 19 9 8304 0440
+
 
 ## Table of Contents
 1. [Introduction](#introduction)
