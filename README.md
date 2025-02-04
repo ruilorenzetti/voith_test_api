@@ -1,4 +1,7 @@
 # Voith Test API
+Author: Rui Carlos Lorenzetti da Silva
+LinkedIn: www.linkedin.com/in/ruilorenzetti
+Phone (WhatsApp): +55 19 9 8304 0440
 
 ## Table of Contents
 1. [Introduction](#introduction)
@@ -119,7 +122,6 @@ The system processes different datasets, each serving a distinct purpose:
 
 - **Date:** February 3, 2025
 - **Author:** Rui Carlos Lorenzetti da Silva
-- **Status:** Accepted
 
 ### **Context**
 
@@ -190,13 +192,24 @@ This will spin up Kafka, InfluxDB, and all necessary services.
 ## Areas for Improvement
 
 1. **Logging and Monitoring**:
-    - Integrate **Prometheus + Grafana** for better observability.
+   - Integrate **Prometheus + Grafana** for better observability.
 
 2. **Security Enhancements**:
-    - Add **OAuth2 authentication** for secured endpoints.
+   - Add **OAuth2 authentication** for secured endpoints.
 
 3. **Scalability**:
-    - Deploy microservices in **Kubernetes** for horizontal scaling.
+   - Deploy microservices in **Kubernetes** for horizontal scaling.
+
+4. **Testing Coverage**:
+   - Increase **unit and integration test coverage** across all services.
+   - Implement **contract testing** to ensure API consistency between services.
+
+5. **Performance Optimization**:
+   - Use the **official InfluxDB Java client** instead of manually parsing **CSV/JSON** for better performance and reliability.
+
+6. **Code Organization and Reusability**:
+   - Extract the **shared model classes** into a **separate  module** to improve maintainability and avoid redundancy across microservices.
+
 
 ---
 
